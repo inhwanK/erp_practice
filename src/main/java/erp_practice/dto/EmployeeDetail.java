@@ -77,6 +77,7 @@ public class EmployeeDetail {
 	public String toString() {
 		return String.format("EmpDetail [empNo=%s, gender=%s, hireDate=%s, pass=%s, pic=%s]", empNo, gender, hireDate,
 				pass, Arrays.toString(pic));
+		// 이거 왜 arrays.tostring 해야 되고 pic.length는 안되는지 아는사람~~~`
 	}
 
 	
