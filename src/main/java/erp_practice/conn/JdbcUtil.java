@@ -12,17 +12,17 @@ public class JdbcUtil {
 	public static Connection getConnection() {
 
 		String connPath = "db.properties";
-		Connection conn = null;
+		Connection prop = null;
 		try (InputStream in = ClassLoader.getSystemResourceAsStream(connPath)) {
 			Properties db = new Properties();
 			db.load(in);
-			conn = DriverManager.getConnection(db.getProperty("url"), db);
+			prop = DriverManager.getConnection(db.getProperty("url"), db);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return conn;
+		return prop;
 	}
 }
