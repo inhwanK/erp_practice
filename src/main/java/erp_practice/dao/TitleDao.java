@@ -10,7 +10,7 @@ public interface TitleDao {
 	List<Title> selectTitleAll();
 	
 	int insertTitle(Title title);
-	void deleteTitle(int tNo);
-	void updateTitle(Title title);
+	int deleteTitle(int tNo);
+	int updateTitle(Title title);
 	
 }
