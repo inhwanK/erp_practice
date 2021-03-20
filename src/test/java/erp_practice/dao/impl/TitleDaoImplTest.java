@@ -14,6 +14,7 @@ import erp_practice.dto.Title;
 public class TitleDaoImplTest {
 	private TitleDao dao = TitleDaoImpl.getInstance();
 
+
 	@Test
 	public void test03SelectTitleByNo() {
 		fail("Not yet implemented");
@@ -28,15 +29,16 @@ public class TitleDaoImplTest {
 	public void test01InsertTitle() {
 		System.out.println("test01InsertTitle()");
 //		Title insertTitle = new Title(100,"노예");
-//		int res = dao.insertTitle(insertTitle);
-		int res = dao.insertTitle(new Title(100, "노예"));
+//		int res = dao.insertTitle(inserTitle);
+//		System.out.println(insertTitle);
+		int res = dao.insertTitle(new Title(10, "노예"));
 		Assert.assertEquals(1, res);		
 	}
 
 	@Test
 	public void test05DeleteTitle() {
 		System.out.println("test05DeleteTitle()");
-		int res = dao.deleteTitle(100);
+		int res = dao.deleteTitle(10);
 		Assert.assertEquals(1, res);
 	}
 

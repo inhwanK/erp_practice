@@ -5,7 +5,7 @@ import java.util.List;
 import erp_practice.dto.Title;
 
 public interface TitleDao {
-	List<Title> selectTitleByNo(int tNo);
+	Title selectTitleByNo(int tNo);
 	
 	List<Title> selectTitleAll();
 	
