@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import erp_practice.conn.JdbcUtil;
@@ -55,7 +56,20 @@ public class TitleDaoImpl implements TitleDao {
 
 	@Override
 	public List<Title> selectTitleAll() {
-		
+		String sql = "select * from title;";
+		try(Connection conn = JdbcUtil.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+						ResultSet rs = pstmt.executeQuery()){
+			if(rs.next()) {
+				List<Title> listTitle = new ArrayList<>();
+				do {
+					listTitle.add(getTitle(rs));
+				}while(rs.next());
+				return listTitle;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
