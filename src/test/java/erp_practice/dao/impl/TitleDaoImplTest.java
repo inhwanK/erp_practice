@@ -1,7 +1,5 @@
 package erp_practice.dao.impl;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -17,12 +15,16 @@ public class TitleDaoImplTest {
 
 	@Test
 	public void test03SelectTitleByNo() {
-		fail("Not yet implemented");
+		System.out.println("test03SelectTitleByNo");
+		Object res = dao.selectTitleByNo(10);
+		Assert.assertNotNull(res);
 	}
 
 	@Test
 	public void test02SelectTitleAll() {
-		fail("Not yet implemented");
+		System.out.println("test02SelectTitleAll()");
+		Object res = dao.selectTitleAll();
+		Assert.assertNotNull(res);
 	}
 
 	@Test
@@ -44,7 +46,9 @@ public class TitleDaoImplTest {
 
 	@Test
 	public void test04UpdateTitle() {
-		fail("Not yet implemented");
+		System.out.println("test04UpdateTitle()");
+		Object res = dao.updateTitle(new Title(10,"상노예"));
+		Assert.assertNotNull(res);
 	}
 
 }
