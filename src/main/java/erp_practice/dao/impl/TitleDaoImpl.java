@@ -8,6 +8,7 @@ import java.util.List;
 import erp_practice.conn.JdbcUtil;
 import erp_practice.dao.TitleDao;
 import erp_practice.dto.Title;
+import erp_practice.exception.SqlConstraintException;
 
 public class TitleDaoImpl implements TitleDao {
 
@@ -32,28 +33,36 @@ public class TitleDaoImpl implements TitleDao {
 
 	@Override
 	public int insertTitle(Title title) {
-		String sql = "insert into title value(?,?)";
+		String sql = "insert into title values(?,?)";
 		try(Connection conn = JdbcUtil.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)){
 			pstmt.setInt(1, title.gettNo());
 			pstmt.setString(2, title.gettName());
 		return pstmt.executeUpdate();
 		}catch(SQLException e){
+			throw new SqlConstraintException(e.getMessage(), e);
+		}
+		
+	}
+
+	@Override
+	public int deleteTitle(int tNo) {
+		String sql = "delete from title where tno = ?";
+		try(Connection conn = JdbcUtil.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)){
+			pstmt.setInt(1, tNo);
+			return pstmt.executeUpdate();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
 		return 0;
 	}
 
 	@Override
-	public void deleteTitle(int tNo) {
-		String sql = "";
-
-	}
-
-	@Override
-	public void updateTitle(Title title) {
+	public int updateTitle(Title title) {
 		
-
+		return 0;
 	}
 
 	

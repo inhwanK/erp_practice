@@ -17,3 +17,10 @@ INSERT INTO EMPLOYEE VALUES(1003, '조민희', 3, 4377, 3000000, 2);
 INSERT INTO EMPLOYEE VALUES(2106, '김창섭', 4, 1003, 2500000, 2);
 INSERT INTO EMPLOYEE VALUES(1365, '김상원', 5, 3426, 1500000, 1);
 
+select *
+  from title;
+  
+insert into title values(100,"노예");
+delete 
+  from title 
+ where tno = 100;
