@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import java.awt.CardLayout;
+import erp_practice.ui.table.TitleTablePanel;
 
 @SuppressWarnings("serial")
 public class TitleManagingUI extends JFrame {
